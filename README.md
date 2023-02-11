@@ -14,4 +14,5 @@ scenario ranging from 3 or 8 agents.
 The SFM is a reactive based motion planning algorithm in which the crux of the algorithm relies on the attractive force
 from the goal and the interaction force from neighboring agents/pedestrians (i.e. distance between agents). The authors
 modeled the interaction force by 3 core components:
-1. Repulsive interaction force (i.e. force that repels the closer the agent gets to another agent) denoted by $A_i
+1. Repulsive interaction force (i.e. force that repels the closer the agent gets to another agent) denoted by $A_iexp\(r_i-d_{iW}\)/B_i]
+2. Body force (i.e. counteracting force in the normal/compression direction when colliding) denoted by
