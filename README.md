@@ -5,6 +5,10 @@ were simulated and compared with one another:
 - Predictive Time to Collision (TTC) Algorithms
 - Sampling-based Velocity Obstacles (VO) Algorithm
 
+<p align="center">
+  <img src="gif/3_agents.gif" alt="animated" />
+</p>
+
 ## Review of each Algorithm
 We review the nature of each of the algorithm and later compare the algorithm in a multi-agent navigation
 scenario ranging from 3 or 8 agents.
