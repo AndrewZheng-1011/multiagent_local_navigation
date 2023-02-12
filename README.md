@@ -44,6 +44,10 @@ SFM:
 - Relaxation time to compute goal force, $\xi$ : 0.5
 - Mass, m: 80 [kg]
 - Max force, $F_{max}$: 500 [N]
+- Scaling constant for repulsive force, A: 2000
+- Safe distance that agent prefer to keep, B: 0.08
+- Scaling repulsive force due to collision, k: 1.2e5
+- Sliding friction constant due to collision, $\kappa$: 2.4e5
 
 Predictive TTC:
 - Sensing radius, $d_{hor}$: 5 [m]
