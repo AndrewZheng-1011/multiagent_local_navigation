@@ -290,7 +290,7 @@ class TTCAgent(AbstractAgent):
         return False
     
 
-    def computeTTC(self, neighbor, epsilon = 0):
+    def computeTTC(self, neighbor):
         """
         Compute time to collision (TTC)
         
@@ -309,8 +309,8 @@ class TTCAgent(AbstractAgent):
         v = self.vel - neighbor.vel
         r = self.radius + neighbor.radius # Scalar
 
-        a = np.dot(v, v) - epsilon**2
-        b = np.dot(x, v) - epsilon*r
+        a = np.dot(v, v) - self.epsilon**2
+        b = np.dot(x, v) - self.epsilon*r
         c = np.dot(x,x) - r**2
         d = b**2 - a*c
 
@@ -502,7 +502,7 @@ class VOAgent(AbstractAgent):
             vel[:,i] = self.getRandCirc(self.maxspeed)
         return vel
 
-    def computeTTC(self, neighbor, epsilon=0, cand_v=[]):
+    def computeTTC(self, neighbor, cand_v=[]):
         """
         Compute time to collision (TTC) of neighboring agent w.r.t. self
         
@@ -527,8 +527,8 @@ class VOAgent(AbstractAgent):
             v = cand_v - neighbor.vel
         r = self.radius + neighbor.radius # Scalar
 
-        a = np.dot(v, v)-epsilon**2
-        b = np.dot(x, v) - epsilon*r
+        a = np.dot(v, v)-self.epsilon**2
+        b = np.dot(x, v) - self.epsilon*r
         c = np.dot(x,x) - r**2
         d = b**2 - a*c
 
@@ -587,7 +587,7 @@ class VOAgent(AbstractAgent):
             for neighbor in neighbors:
                 # Check if neighbor is close
                 if self.detectCloseNeighbor(neighbor):
-                    ttc_neighbors.append(self.computeTTC(neighbor, self.epsilon, cand_vel))
+                    ttc_neighbors.append(self.computeTTC(neighbor, cand_vel))
             
             if np.size(ttc_neighbors) == 0 : # If no neighbors, append a dummy ttc with infinite ttc
                 ttc_neighbors.append(float('inf'))
