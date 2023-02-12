@@ -39,6 +39,7 @@ where $\bf{v}^{goal}$ is the goal velocity, $\bf{v}$ is the current velocity, an
 Simulation results for the three algorithms were conducted for scenes with 3 agents passing along a hallways and 8 agents navigating through each other to reach a desired goal position without collision. For each scene, 5 simulations were conducted, 1 for SFM, 2 for predictive TTC (w/ sensory noise $\epsilon$ = 0, 0.2, and sampling-based VO (w/ $\epsilon$ = 0, 0.2).
 
 I list the major tuning parameters for each of the algorithm. Minor parameter details can be looked through within the code.
+
 SFM:
 - Sensing radius, $d_{hor} $: 5 [m]
 - Relaxation time to compute goal force, $\xi$ : 0.5
